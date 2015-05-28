@@ -77,4 +77,12 @@ describe('stubo', function () {
       assert.deepEqual(stubs, expected)
     })
   })
+
+  describe('> when a stub key is a function', function () {
+    it('should automatically create a function and return the value', function () {
+      var stubs = stubo('supermodule', 'someobj.funcToReturnValue5()', 5)
+      assert.strictEqual(typeof stubs.supermodule.someobj.funcToReturnValue5, 'function')
+      assert.strictEqual(stubs.supermodule.someobj.funcToReturnValue5(), 5)
+    })
+  })
 })

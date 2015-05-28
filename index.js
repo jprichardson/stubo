@@ -15,7 +15,16 @@ function stubo (obj, key, subkey, value) {
   for (var i = 0; i < subkeys.length - 1; ++i) {
     o = objKey(o, subkeys[i])
   }
-  o[subkeys[subkeys.length - 1]] = value
+
+  var lastSubKey = subkeys[subkeys.length - 1]
+  if (endsWith(lastSubKey, '()')) {
+    lastSubKey = lastSubKey.slice(0, -2) // cut off '()'
+    o[lastSubKey] = function () {
+      return value
+    }
+  } else {
+    o[lastSubKey] = value
+  }
 
   return obj
 }
@@ -25,6 +34,10 @@ function objKey (obj, key) {
   return key in obj
     ? obj[key]
     : (obj[key] = {})
+}
+
+function endsWith (str, suffix) {
+  return str.lastIndexOf(suffix) === (str.length - suffix.length)
 }
 
 module.exports = stubo
