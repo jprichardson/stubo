@@ -1,0 +1,28 @@
+{
+  "name": "stubo",
+  "version": "0.0.0",
+  "description": "A simple JavaScript stubbing library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jprichardson/stubo.git"
+  },
+  "keywords": [
+    "test",
+    "tests",
+    "stub",
+    "stubbing",
+    "mocha",
+    "angular",
+    "proxyquire"
+  ],
+  "author": "JP Richardson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jprichardson/stubo/issues"
+  },
+  "homepage": "https://github.com/jprichardson/stubo#readme"
+}
