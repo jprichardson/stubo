@@ -19,7 +19,7 @@ Installation
 Example
 -------
 
-`stubo` converts this:
+`stubo` allows you to convert this:
 
 ```js
 var stub = {
